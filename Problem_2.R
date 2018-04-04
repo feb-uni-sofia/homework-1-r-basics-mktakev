@@ -4,19 +4,21 @@ xmin <- c(23.0, 20.5, 28.2, 20.3, 22.4, 17.2, 18.2)
 xmax <- c(25.0, 22.8, 31.2, 27.3, 28.4, 20.2, 24.1)
 
 # b)
-xmax- xmin
+xmax - xmin
 
 # c)
 mean(xmin)
 mean(xmax)
 
 # d)
-xmin[xmin<mean(xmin)]
+xmin[xmin < mean(xmin)]
 
 # e)
-xmax[xmax>mean(xmax)]
+xmax[xmax > mean(xmax)]
 
 # f)
+## not DRY, refactor names into a separate vector first to avoid retyping the names
+
 setNames(xmin, c("03Mon18", "04Tue18", "05Wed18", "04Thu18", "05Fri18", "06Sat18", "07Sun18"))
 setNames(xmax, c("03Mon18", "04Tue18", "05Wed18", "04Thu18", "05Fri18", "06Sat18", "07Sun18"))
         
@@ -26,7 +28,7 @@ temperatures <- data.frame(
   df.xmax = xmax)
 
 # h)
-temperatures$xminFahrenheit <- 9/5*xmin+32
+temperatures$xminFahrenheit <- 9 / 5 * xmin + 32
 
 # i)
 Fahrenheit <- data.frame(df.xminFahrenheit = xminFahrenheit)
@@ -39,8 +41,8 @@ monthFahrenheit <- data.frame(
 monthFh <- data.frame(
   df.xminFahrenheit = xminFahrenheit[c(-6, -7)])
 
+## Easier
 
+monthFahrenheit[1:5, ]
+monthFahrenheit[-(6:7), ]
 
-
-
-  
